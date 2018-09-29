@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularSimpleProject';
+
+  AlertNow($event) {
+    console.log($event);
+    alert("You Clicked");
+  }
 }
