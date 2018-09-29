@@ -1,6 +1,14 @@
-<div class="col1">
-  <button mat-raised-button (click)="AlertNow($event, 12345)" >Test Btn</button><br/>
-  <button mat-raised-button (click)="ResetSlideValue()">Reset</button>
-  <mat-slider min="-5" max="5" step="1" [(ngModel)]="slideValue"></mat-slider>
-  <label>{{ slideValue }}</label>
-</div>
+<mat-grid-list cols="1" rowHeight="100px">
+  <mat-grid-tile class="bgColor">
+    <button mat-raised-button (click)="AlertNow($event, 12345)" >Test Btn</button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <button mat-raised-button (click)="ResetSlideValue()">Reset</button>
+    <mat-slider min="-5" max="5" step="1" [(ngModel)]="slideValue">
+</mat-slider>
+    <label>{{ slideValue }}</label>
+  </mat-grid-tile>
+</mat-grid-list>
+  
+  
+  

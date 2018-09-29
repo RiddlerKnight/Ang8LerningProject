@@ -1,9 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/_theming.scss';
+@import '~@angular/material/theming';
 @include mat-core();
 
-$default-theme: mat-dark-theme(mat-palette($mat-green, A400), mat-palette($mat-light-blue, A400));
+$primiry-color : mat-palette($mat-green, A400);
+$accent-color : mat-palette($mat-light-blue, A400);
+$default-theme: mat-dark-theme($primiry-color, $accent-color);
 @include angular-material-theme($default-theme);
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.bgColor{
+    background-color: mat-color($accent-color);
+}
+
+//====== This is example for changing theme==========
+// // default theme:
+// $primary: mat-palette($mat-blue,800);
+// $accent: mat-palette($mat-teal);
+// $theme: mat-light-theme($primary, $accent);
+
+// @include angular-material-theme($theme);
+
+// // "dark" theme
+// $dark-p: mat-palette($mat-blue-grey, 500);
+// $dark-a: mat-palette($mat-blue-grey,900);
+// $dark-t: mat-dark-theme($dark-p, $dark-a);
+
+// .darkTheme {
+//   @include angular-material-theme($dark-t);
+// }
+
+// How to use
+// ===========================A snippet from my application scss file:
+
+// @import '../../themes/main-theme';  //  <-- the theme file shown above
+
+// //default palette forground/background:
+// $light-foreground-palette: map-get($theme, foreground);
+// $light-background-palette: map-get($theme, background);
+
+// //dark palette forground/background:
+// $dark-foreground-palette: map-get($dark-t, foreground);
+// $dark-background-palette: map-get($dark-t, background);
+
+// .light-colors{
+//     background-color : mat-color($primary, default);
+//     color: mat-color($light-foreground-palette, text);
+// }
+// .dark-colors{
+//     background-color : mat-color($dark-p, default);
+//     color: mat-color($dark-foreground-palette, text);
+// }
