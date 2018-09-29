@@ -13,4 +13,9 @@ export class AppComponent {
     console.log(event);
     alert("You Clicked : Value is " + value);
   }
+
+  ResetSlideValue()
+  {
+    this.slideValue = 0;
+  }
 }
