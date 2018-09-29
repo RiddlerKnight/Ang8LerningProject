@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularSimpleProject';
+  slideValue = 0;
 
   AlertNow(event: Event, value: string) {
     console.log(event);

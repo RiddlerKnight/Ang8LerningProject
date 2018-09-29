@@ -1,3 +1,5 @@
 <div class="col1">
   <button mat-raised-button (click)="AlertNow($event, 12345)" >Test Btn</button>
+  <mat-slider min="-5" max="5" step="1" [(ngModel)]="slideValue"></mat-slider>
+  <label>{{ slideValue }}</label>
 </div>
