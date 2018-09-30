@@ -27,6 +27,18 @@
         <button mat-raised-button (click)="NgConditionSwitching()">Switch</button>
       </div>
   </mat-grid-tile>
+  <mat-grid-tile [ngStyle]="{'background-color': ngStyleString}">
+     <div>
+        <p>Example of ngStyle</p>
+      <button mat-raised-button (click)="ChangeNgStyleString()">change style</button>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [ngClass]="{'RedColorBg': ngStyleCondition, 'BlueColorBg': !ngStyleCondition}">
+    <div>
+        <p>Example of ngClass</p>
+     <button mat-raised-button (click)="ChangeNgStyle()">change class</button>
+   </div>
+ </mat-grid-tile>
 </mat-grid-list>
   
   

@@ -9,6 +9,9 @@ export class AppComponent {
   title = 'AngularSimpleProject';
   slideValue = 0;
   ngCondition = true;
+  ngStyleCondition = true;
+  ngStyleString = "red";
+
 
   AlertNow(event: Event, value: string) {
     console.log(event);
@@ -29,5 +32,13 @@ export class AppComponent {
     {
       this.ngCondition = true;
     }
+  }
+  ChangeNgStyleString()
+  {
+    (this.ngStyleString === "red")?this.ngStyleString = "blue":this.ngStyleString = "red";
+  }
+  ChangeNgStyle()
+  {
+    (this.ngStyleCondition)?this.ngStyleCondition = false:this.ngStyleCondition = true;
   }
 }
