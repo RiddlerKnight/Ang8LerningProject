@@ -1,12 +1,31 @@
-<mat-grid-list cols="1" rowHeight="100px">
+<mat-grid-list cols="1" rowHeight="200px">
   <mat-grid-tile class="bgColor">
-    <button mat-raised-button (click)="AlertNow($event, 12345)" >Test Btn</button>
+    <div mat-line>
+    <label>Basic scss and assign event to the button</label><br>
+    <button mat-raised-button (click)="AlertNow($event, 12345)">Test Btn</button>
+  </div>
   </mat-grid-tile>
   <mat-grid-tile>
+    <div mat-line>
+      <label>Example of Two-way binding</label><br>
+      <mat-slider min="-5" max="5" step="1" [(ngModel)]="slideValue"></mat-slider><br>
       <button mat-raised-button (click)="ResetSlideValue()">Reset</button>
-    <mat-slider min="-5" max="5" step="1" [(ngModel)]="slideValue">
-</mat-slider>
+    </div>
     <label>{{ slideValue }}</label>
+  </mat-grid-tile>
+  <mat-grid-tile rowHeight="fit" class="bgColor">
+      <div mat-line>
+        <p>Example of ngIf and else condition</p>
+        <p *ngIf="ngCondition; else NgElse" style="color: green;">
+          Now is true
+        </p>
+        <ng-template #NgElse>
+          <p style="color: red;">
+            Now is false
+          </p>
+        </ng-template>
+        <button mat-raised-button (click)="NgConditionSwitching()">Switch</button>
+      </div>
   </mat-grid-tile>
 </mat-grid-list>
   
