@@ -1,4 +1,4 @@
-<mat-grid-list cols="1" rowHeight="200px">
+<mat-grid-list cols="1" rowHeight="2:0.3" >
   <mat-grid-tile class="bgColor">
     <div mat-line>
     <label>Basic scss and assign event to the button</label><br>
@@ -13,7 +13,7 @@
     </div>
     <label>{{ slideValue }}</label>
   </mat-grid-tile>
-  <mat-grid-tile rowHeight="fit" class="bgColor">
+  <mat-grid-tile class="bgColor">
       <div mat-line>
         <p>Example of ngIf and else condition</p>
         <p *ngIf="ngCondition; else NgElse" style="color: green;">
@@ -37,6 +37,17 @@
     <div>
         <p>Example of ngClass</p>
      <button mat-raised-button (click)="ChangeNgStyle()">change class</button>
+   </div>
+ </mat-grid-tile>
+ <mat-grid-tile>
+   <div>
+     <button mat-raised-button (click)="AddDetail()">Add Detail</button>
+     <button mat-raised-button (click)="ClearDetail()">Clear Detail</button>
+     <p *ngFor="let dateStr of ngForArray; let i = index"
+        [ngStyle]="{'background-color': i+1 >= 3 ? 'blue':'transparent'}"
+        [ngClass]="{'WhiteColor': i+1 >= 3}">
+       {{i+1}} {{dateStr}}
+     </p>
    </div>
  </mat-grid-tile>
 </mat-grid-list>

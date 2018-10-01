@@ -11,7 +11,7 @@ export class AppComponent {
   ngCondition = true;
   ngStyleCondition = true;
   ngStyleString = "red";
-
+  ngForArray = [];
 
   AlertNow(event: Event, value: string) {
     console.log(event);
@@ -40,5 +40,15 @@ export class AppComponent {
   ChangeNgStyle()
   {
     (this.ngStyleCondition)?this.ngStyleCondition = false:this.ngStyleCondition = true;
+  }
+
+  AddDetail()
+  {
+    this.ngForArray.push(new Date());
+  }
+
+  ClearDetail()
+  {
+    this.ngForArray.length = 0;
   }
 }

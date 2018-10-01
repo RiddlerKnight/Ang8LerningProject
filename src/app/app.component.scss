@@ -17,3 +17,7 @@ $dark-forground-palette: map-get($default-theme, accent);
 .BlueColorBg{
     background-color: mat-color($dark-forground-palette);
 }
+
+.WhiteColor{
+    color: white;
+}
