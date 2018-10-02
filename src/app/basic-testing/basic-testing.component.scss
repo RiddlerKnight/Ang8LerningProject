@@ -1,0 +1,23 @@
+@import "../../styles";
+
+// @mixin theme-color-grabber($theme){
+//     $primary: map-get($theme, primary);
+
+//     .primaryColorBG {
+//         background-color: mat-color($primary);
+//       }
+// }
+$dark-background-palette: map-get($default-theme, primary);
+$dark-forground-palette: map-get($default-theme, accent);
+
+.RedColorBg{
+    background-color: mat-color($dark-background-palette);
+}
+
+.BlueColorBg{
+    background-color: mat-color($dark-forground-palette);
+}
+
+.WhiteColor{
+    color: white;
+}
