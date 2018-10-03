@@ -1,15 +1,8 @@
-<div fxLayout="row wrap" fxLayoutAlign="space-around center">
-  <div ><a href="home">Home</a></div>
-  <div ><a href="basic-testing">Basic Testing</a></div>
-  <div ><a href="database-testing">Database Testing</a></div>
+<div fxLayout="row wrap" fxLayoutAlign="flex-start" class="NavMenuColor">
+  <div ><a routerLink="/" routerLinkActive="NavMenuActive" [routerLinkActiveOptions]="{exact: true}"><button mat-button >Home</button></a></div>
+  <div ><a routerLink="basic-testing" routerLinkActive="NavMenuActive"><button mat-button>Basic Testing</button></a></div>
+  <div ><a [routerLink]="['database-testing']" routerLinkActive="NavMenuActive"><button mat-button>Database Testing</button></a></div>
   <div >test</div>
   <div >test</div>
 </div>
 <router-outlet></router-outlet>
-
-
-
-
-  
-
-  

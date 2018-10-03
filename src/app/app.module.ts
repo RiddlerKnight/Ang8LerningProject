@@ -14,7 +14,7 @@ import { DatabaseTestingComponent } from './database-testing/database-testing.co
 import { BasicTestingComponent } from './basic-testing/basic-testing.component';
 
 const appRoutes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'database-testing', component: DatabaseTestingComponent},
   {path: 'basic-testing', component: BasicTestingComponent}
 ];

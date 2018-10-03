@@ -1,0 +1,11 @@
+@import "../styles";
+
+$dark-background-palette:map-get($default-theme, primary);
+$dark-forground-palette:map-get($default-theme, accent);
+.NavMenuColor{
+    background-color: mat-color($dark-background-palette);
+}
+
+.NavMenuActive{
+    background-color: mat-color($dark-forground-palette);
+}
