@@ -12,11 +12,14 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { DatabaseTestingComponent } from './database-testing/database-testing.component';
 import { BasicTestingComponent } from './basic-testing/basic-testing.component';
+import { ShowGetParamComponent } from './show-get-param/show-get-param.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'database-testing', component: DatabaseTestingComponent},
-  {path: 'basic-testing', component: BasicTestingComponent}
+  {path: 'basic-testing', component: BasicTestingComponent},
+  {path: 'param-testing', component: ShowGetParamComponent},
+  {path: 'param-testing/:id/:name', component: ShowGetParamComponent}
 ];
 
 @NgModule({
@@ -24,7 +27,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     DatabaseTestingComponent,
-    BasicTestingComponent
+    BasicTestingComponent,
+    ShowGetParamComponent
   ],
   imports: [
     BrowserModule,

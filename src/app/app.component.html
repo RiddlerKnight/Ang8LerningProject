@@ -1,8 +1,23 @@
 <div fxLayout="row wrap" fxLayoutAlign="flex-start" class="NavMenuColor">
-  <div ><a routerLink="/" routerLinkActive="NavMenuActive" [routerLinkActiveOptions]="{exact: true}"><button mat-button >Home</button></a></div>
-  <div ><a routerLink="basic-testing" routerLinkActive="NavMenuActive"><button mat-button>Basic Testing</button></a></div>
-  <div ><a [routerLink]="['database-testing']" routerLinkActive="NavMenuActive"><button mat-button>Database Testing</button></a></div>
-  <div >test</div>
-  <div >test</div>
+  <div>
+    <a routerLink="/" routerLinkActive="NavMenuActive" [routerLinkActiveOptions]="{exact: true}">
+      <button mat-button >Home</button>
+    </a>
+  </div>
+  <div>
+    <a routerLink="basic-testing" routerLinkActive="NavMenuActive">
+      <button mat-button>Basic Testing</button>
+    </a>
+  </div>
+  <div>
+    <a [routerLink]="['database-testing']" routerLinkActive="NavMenuActive">
+      <button mat-button>Database Testing</button>
+    </a>
+  </div>
+  <div>
+    <a [routerLink]="['param-testing']" routerLinkActive="NavMenuActive">
+      <button mat-button>Param Testing</button>
+    </a>
+  </div>
 </div>
 <router-outlet></router-outlet>
