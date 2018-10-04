@@ -8,7 +8,7 @@
         <div fxFlex="60%">
           <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="gappx">
               <app-add-item-control class="BackgroundRegion1" fxFlexFill></app-add-item-control>
-              <app-item-model *ngFor="let productItem of ProductList"></app-item-model>
+              <app-item-model *ngFor="let productItem of ProductList" [ProductElement]='productItem'></app-item-model>
           </div>
         </div>
 </div>
