@@ -13,13 +13,17 @@ import { HomeComponent } from './home/home.component';
 import { DatabaseTestingComponent } from './database-testing/database-testing.component';
 import { BasicTestingComponent } from './basic-testing/basic-testing.component';
 import { ShowGetParamComponent } from './show-get-param/show-get-param.component';
+import { ComponentDeepdiveComponent } from './component-deepdive/component-deepdive.component';
+import { AddItemControlComponent } from './component-deepdive/add-item-control/add-item-control.component';
+import { ItemModelComponent } from './component-deepdive/item-model/item-model.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'database-testing', component: DatabaseTestingComponent},
   {path: 'basic-testing', component: BasicTestingComponent},
   {path: 'param-testing', component: ShowGetParamComponent},
-  {path: 'param-testing/:id/:name', component: ShowGetParamComponent}
+  {path: 'param-testing/:id/:name', component: ShowGetParamComponent},
+  {path: 'component-deepdive', component: ComponentDeepdiveComponent}
 ];
 
 @NgModule({
@@ -28,7 +32,10 @@ const appRoutes: Routes = [
     HomeComponent,
     DatabaseTestingComponent,
     BasicTestingComponent,
-    ShowGetParamComponent
+    ShowGetParamComponent,
+    ComponentDeepdiveComponent,
+    AddItemControlComponent,
+    ItemModelComponent
   ],
   imports: [
     BrowserModule,

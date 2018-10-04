@@ -1,0 +1,14 @@
+<div fxLayout
+      fxLayout.xs="column"
+      fxLayoutAlign="center"
+      fxLayoutGap="10px"
+      fxLayoutGap.xs="0">
+        <!-- <div class="item item-1 BackgroundRegion1" fxFlex="15%">Item 1</div> -->
+        <!-- <div class="BackgroundRegion2" fxFlex="20%" fxFlexOrder="3">Item 2</div> -->
+        <div fxFlex="60%">
+          <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="gappx">
+              <app-add-item-control class="BackgroundRegion1" fxFlexFill></app-add-item-control>
+              <app-item-model *ngFor="let productItem of ProductList"></app-item-model>
+          </div>
+        </div>
+</div>
