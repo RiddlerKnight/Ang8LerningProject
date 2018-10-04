@@ -16,4 +16,9 @@ export class ComponentDeepdiveComponent implements OnInit {
   ngOnInit() {
   }
 
+  OnProductAdd(product:ProductItemModel)
+  {
+    this.ProductList.push(product);
+  }
+
 }

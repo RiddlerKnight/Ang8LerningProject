@@ -6,9 +6,9 @@
         <!-- <div class="item item-1 BackgroundRegion1" fxFlex="15%">Item 1</div> -->
         <!-- <div class="BackgroundRegion2" fxFlex="20%" fxFlexOrder="3">Item 2</div> -->
         <div fxFlex="60%">
-          <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="gappx">
-              <app-add-item-control class="BackgroundRegion1" fxFlexFill></app-add-item-control>
-              <app-item-model *ngFor="let productItem of ProductList" [ProductElement]='productItem'></app-item-model>
+          <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="1em" >
+              <app-add-item-control fxFlexFill (AddProductCommand)="OnProductAdd($event)"></app-add-item-control>
+              <app-item-model *ngFor="let productItem of ProductList" [ProductElement]='productItem' fxFlexFill></app-item-model>
           </div>
         </div>
 </div>

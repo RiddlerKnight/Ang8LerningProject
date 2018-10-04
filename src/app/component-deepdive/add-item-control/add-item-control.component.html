@@ -1,1 +1,10 @@
-<p>This is add item control</p>
+<mat-card fxFlexFill>
+    <h3>AddItem Component</h3>
+    <mat-form-field>
+        <input matInput placeholder="Product Name" [(ngModel)]="productName">
+    </mat-form-field><br/>
+    <mat-form-field>
+        <textarea  matInput placeholder="Product Discription" [(ngModel)]="productDetail"></textarea>
+    </mat-form-field><br/>
+    <button mat-raised-button (click)="AddProduct()">Add Product</button>
+</mat-card>

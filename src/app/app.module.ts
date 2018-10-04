@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
-import {MatButtonModule, MatSliderModule} from '@angular/material';
+import {MatButtonModule, MatSliderModule, MatCardModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -44,6 +44,9 @@ const appRoutes: Routes = [
     MatSliderModule,
     FormsModule,
     MatGridListModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
     FlexLayoutModule,
     RouterModule.forRoot(appRoutes)
   ],
