@@ -6,5 +6,8 @@
     <mat-form-field>
         <textarea  matInput placeholder="Product Discription" [(ngModel)]="productDetail"></textarea>
     </mat-form-field><br/>
-    <button mat-raised-button (click)="AddProduct()">Add Product</button>
+    <mat-form-field>
+        <input matInput placeholder="Comment" #commentMessage> 
+    </mat-form-field><span>* this value will be shown in the debug module.</span><br/>
+    <button mat-raised-button (click)="AddProduct(commentMessage)">Add Product</button>
 </mat-card>
