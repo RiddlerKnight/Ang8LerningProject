@@ -32,4 +32,10 @@ export class ItemModelComponent implements OnInit {
     //Add 'implements DoCheck' to the class.
     console.log("ngDoCheck Call!!");
   }
+
+  ngAfterContentInit(): void {
+    //Called after ngOnInit when the component's or directive's content has been initialized.
+    //Add 'implements AfterContentInit' to the class.
+    console.log("ngAfterContentInit Call!!");
+  }
 }
