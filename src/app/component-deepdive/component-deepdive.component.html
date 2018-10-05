@@ -8,7 +8,8 @@
         <div fxFlex="60%">
           <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="1em" >
               <app-add-item-control fxFlexFill (AddProductCommand)="OnProductAdd($event)"></app-add-item-control>
-              <app-item-model *ngFor="let productItem of ProductList" [ProductElement]='productItem' fxFlexFill>
+              <app-item-model *ngFor="let productItem of ProductList" [ProductElement]='productItem' 
+              [ProductName]="productItem.ProductName" fxFlexFill>
                 <p>
                   Additional content
                 </p>

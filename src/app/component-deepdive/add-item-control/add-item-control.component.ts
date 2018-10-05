@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef, Input, SimpleChanges } from '@angular/core';
 import { ProductItemModel } from '../item-model-object';
 
 @Component({

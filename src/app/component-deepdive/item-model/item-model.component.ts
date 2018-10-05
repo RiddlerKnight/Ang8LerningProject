@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input , SimpleChanges} from '@angular/core';
 import {ProductItemModel} from '../item-model-object';
 
 @Component({
@@ -9,10 +9,17 @@ import {ProductItemModel} from '../item-model-object';
 export class ItemModelComponent implements OnInit {
 
   @Input() ProductElement:ProductItemModel;
-
+  @Input() ProductName:string; //This var is used for test Lifecycle hooks
   constructor() { }
 
   ngOnInit() {
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+
+    console.log("ngOnChanges Call!!");
+    console.log(changes);
+  }
 }

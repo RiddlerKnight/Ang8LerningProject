@@ -8,8 +8,8 @@ import {ProductItemModel} from './item-model-object';
 })
 export class ComponentDeepdiveComponent implements OnInit {
 
-  ProductList:ProductItemModel[] = [new ProductItemModel(1,'Coffe','Espresso'),
-                                    new ProductItemModel(1,'Coffe Latte','Latte')]
+  ProductList:ProductItemModel[] = []// = [new ProductItemModel(1,'Coffe','Espresso'),
+                                //   new ProductItemModel(1,'Coffe Latte','Latte')]
 
   constructor() { }
 
