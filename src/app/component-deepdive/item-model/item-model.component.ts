@@ -10,9 +10,13 @@ export class ItemModelComponent implements OnInit {
 
   @Input() ProductElement:ProductItemModel;
   @Input() ProductName:string; //This var is used for test Lifecycle hooks
-  constructor() { }
+  
+  constructor() {
+    console.log("constructor Call!!");
+   }
 
   ngOnInit() {
+    console.log("ngOnInit Call!!");
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -21,5 +25,11 @@ export class ItemModelComponent implements OnInit {
 
     console.log("ngOnChanges Call!!");
     console.log(changes);
+  }
+
+  ngDoCheck(): void {
+    //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
+    //Add 'implements DoCheck' to the class.
+    console.log("ngDoCheck Call!!");
   }
 }
