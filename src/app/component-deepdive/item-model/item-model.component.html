@@ -1,6 +1,20 @@
 <mat-card fxFlexFill>
+  <div *ngIf="!Editting; else EdittingView">
     <p>Product Name {{ ProductElement.ProductName }}</p>
     <p>Product Discription {{ ProductElement.ProductDetail }}</p>
+    <button mat-raised-button (click)="EditProduct()">Edit</button>
     <ng-content></ng-content>
+  </div>
+  <ng-template #EdittingView>
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Product Name" [(ngModel)]="productName">
+        </mat-form-field><br/>
+        <mat-form-field>
+            <textarea  matInput placeholder="Product Discription" [(ngModel)]="productDetail"></textarea>
+        </mat-form-field><br/>
+      <button mat-raised-button (click)="EditCompleted()">Edit</button>
+    </div>
+  </ng-template>
   </mat-card>
   

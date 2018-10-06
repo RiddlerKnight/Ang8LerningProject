@@ -23,11 +23,13 @@ export class AddItemControlComponent implements OnInit {
 
   AddProduct(commentMessage: HTMLInputElement)
   {
-    console.log("Get comment value by local ref : "+commentMessage.value); //This use local ref to get the value from input element
-    console.log("Get comment value by ViewChild :"+this.CommentInputElement.nativeElement.value);
+    //console.log("Get comment value by local ref : "+commentMessage.value); //This use local ref to get the value from input element
+    //console.log("Get comment value by ViewChild :"+this.CommentInputElement.nativeElement.value);
 
     var theProduct = new ProductItemModel(1 , this.productName, this.productDetail);
     this.AddProductCommand.emit(theProduct);
-    console.log(theProduct);
+    this.productName ='';
+    this.productDetail='';
+    //console.log(theProduct);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,SimpleChanges} from '@angular/core';
 import {ProductItemModel} from './item-model-object';
 
 @Component({
@@ -21,4 +21,10 @@ export class ComponentDeepdiveComponent implements OnInit {
     this.ProductList.push(product);
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+    console.log("In the component-deepdive");
+    console.log(changes);
+  }
 }
