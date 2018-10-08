@@ -19,6 +19,7 @@ import { ItemModelComponent } from './component-deepdive/item-model/item-model.c
 import { DirectiveTestingComponent } from './directive-testing/directive-testing.component';
 import { GreenHighlighterDirective } from './directive-testing/green-highlighter.directive';
 import { UnlessDirective } from './directive-testing/unless.directive';
+import { AccountLoginComponent } from './account-login/account-login.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
   {path: 'param-testing', component: ShowGetParamComponent},
   {path: 'param-testing/:id/:name', component: ShowGetParamComponent},
   {path: 'component-deepdive', component: ComponentDeepdiveComponent},
-  {path: 'directive-testing', component: DirectiveTestingComponent}
+  {path: 'directive-testing', component: DirectiveTestingComponent},
+  {path: 'account-login', component:AccountLoginComponent}
 ];
 
 @NgModule({
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     ItemModelComponent,
     DirectiveTestingComponent,
     GreenHighlighterDirective,
-    UnlessDirective
+    UnlessDirective,
+    AccountLoginComponent
   ],
   imports: [
     BrowserModule,
