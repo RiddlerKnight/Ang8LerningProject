@@ -1,3 +1,11 @@
 <p appGreenHighlighter [DefaultColor]="'greenyellow'" [DefaultHighLightColor]="'darkseagreen'">
   directive-testing works!
 </p>
+<div class="container">
+  <mat-button-toggle (click)="toggleAppUnless()">Show/Hide</mat-button-toggle>
+</div>
+<div *appUnless="showAppUnless">
+  <p>
+    AppUnless Show
+  </p>
+</div>

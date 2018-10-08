@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectiveTestingComponent implements OnInit {
 
+  showAppUnless = false;
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleAppUnless()
+  {
+    if(this.showAppUnless)
+    {
+      this.showAppUnless = false;
+    }else{
+      this.showAppUnless = true;
+    }
+  }
 }

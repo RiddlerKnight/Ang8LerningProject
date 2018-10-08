@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
-import {MatButtonModule, MatSliderModule, MatCardModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatSliderModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonToggleModule} from '@angular/material';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -18,6 +18,7 @@ import { AddItemControlComponent } from './component-deepdive/add-item-control/a
 import { ItemModelComponent } from './component-deepdive/item-model/item-model.component';
 import { DirectiveTestingComponent } from './directive-testing/directive-testing.component';
 import { GreenHighlighterDirective } from './directive-testing/green-highlighter.directive';
+import { UnlessDirective } from './directive-testing/unless.directive';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     AddItemControlComponent,
     ItemModelComponent,
     DirectiveTestingComponent,
-    GreenHighlighterDirective
+    GreenHighlighterDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
@@ -53,6 +55,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     FlexLayoutModule,
+    MatButtonToggleModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
