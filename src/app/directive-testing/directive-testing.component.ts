@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DirectiveTestingComponent implements OnInit {
 
   showAppUnless = false;
+  SwitchValue = 0;
   constructor() { }
 
   ngOnInit() {
@@ -21,5 +22,14 @@ export class DirectiveTestingComponent implements OnInit {
     }else{
       this.showAppUnless = true;
     }
+  }
+
+  Switching(){
+    this.SwitchValue = this.getRandomInt(1,3);
+    console.log("SwitchValue is "+this.SwitchValue);
+  }
+
+  getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }

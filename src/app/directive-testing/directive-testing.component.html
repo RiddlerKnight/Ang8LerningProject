@@ -9,3 +9,9 @@
     AppUnless Show
   </p>
 </div>
+<div [ngSwitch] = "SwitchValue">
+  <p *ngSwitchCase="1">value is 1</p>
+  <p *ngSwitchCase="2">value is 2</p>
+  <p *ngSwitchCase="3">value is 3</p>
+</div>
+<button mat-raised-button (click)="Switching()">Random Switch</button>
