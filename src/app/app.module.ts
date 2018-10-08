@@ -16,6 +16,8 @@ import { ShowGetParamComponent } from './show-get-param/show-get-param.component
 import { ComponentDeepdiveComponent } from './component-deepdive/component-deepdive.component';
 import { AddItemControlComponent } from './component-deepdive/add-item-control/add-item-control.component';
 import { ItemModelComponent } from './component-deepdive/item-model/item-model.component';
+import { DirectiveTestingComponent } from './directive-testing/directive-testing.component';
+import { GreenHighlighterDirective } from './directive-testing/green-highlighter.directive';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
   {path: 'basic-testing', component: BasicTestingComponent},
   {path: 'param-testing', component: ShowGetParamComponent},
   {path: 'param-testing/:id/:name', component: ShowGetParamComponent},
-  {path: 'component-deepdive', component: ComponentDeepdiveComponent}
+  {path: 'component-deepdive', component: ComponentDeepdiveComponent},
+  {path: 'directive-testing', component: DirectiveTestingComponent}
 ];
 
 @NgModule({
@@ -35,7 +38,9 @@ const appRoutes: Routes = [
     ShowGetParamComponent,
     ComponentDeepdiveComponent,
     AddItemControlComponent,
-    ItemModelComponent
+    ItemModelComponent,
+    DirectiveTestingComponent,
+    GreenHighlighterDirective
   ],
   imports: [
     BrowserModule,
