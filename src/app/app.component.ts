@@ -5,7 +5,6 @@ import { AccountService } from './services/accounts.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [AccountService]
 })
 export class AppComponent implements OnInit{
   title = 'AngularSimpleProject';

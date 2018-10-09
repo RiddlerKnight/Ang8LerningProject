@@ -28,4 +28,8 @@ export class AccountLoginComponent implements OnInit {
       console.log('Login fail');
     }
   }
+
+  Logout(){
+    this.accountService.LogoutTheAccount();
+  }
 }

@@ -20,6 +20,8 @@ import { DirectiveTestingComponent } from './directive-testing/directive-testing
 import { GreenHighlighterDirective } from './directive-testing/green-highlighter.directive';
 import { UnlessDirective } from './directive-testing/unless.directive';
 import { AccountLoginComponent } from './account-login/account-login.component';
+import { AccountService } from './services/accounts.service';
+import { SimpleLogService } from './services/simple-log.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -61,7 +63,7 @@ const appRoutes: Routes = [
     MatButtonToggleModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [AccountService,SimpleLogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
