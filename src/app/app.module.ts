@@ -22,6 +22,7 @@ import { UnlessDirective } from './directive-testing/unless.directive';
 import { AccountLoginComponent } from './account-login/account-login.component';
 import { AccountService } from './services/accounts.service';
 import { SimpleLogService } from './services/simple-log.service';
+import { UserMenuPanelComponent } from './user-menu-panel/user-menu-panel.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     DirectiveTestingComponent,
     GreenHighlighterDirective,
     UnlessDirective,
-    AccountLoginComponent
+    AccountLoginComponent,
+    UserMenuPanelComponent
   ],
   imports: [
     BrowserModule,

@@ -1,38 +1,30 @@
-<div fxLayout="row wrap" fxLayoutAlign="flex-start" class="NavMenuColor">
-  <div>
-    <a routerLink="/" routerLinkActive="NavMenuActive" [routerLinkActiveOptions]="{exact: true}">
-      <button mat-button >Home</button>
-    </a>
-  </div>
-  <div>
-    <a routerLink="basic-testing" routerLinkActive="NavMenuActive">
-      <button mat-button>Basic Testing</button>
-    </a>
-  </div>
-  <div>
-    <a [routerLink]="['database-testing']" routerLinkActive="NavMenuActive">
-      <button mat-button>Database Testing</button>
-    </a>
-  </div>
-  <div>
-    <a [routerLink]="['param-testing']" routerLinkActive="NavMenuActive">
-      <button mat-button>Param Testing</button>
-    </a>
-  </div>
-  <div>
-    <a [routerLink]="['component-deepdive']" routerLinkActive="NavMenuActive">
-      <button mat-button>Component Deepdrive</button>
-    </a>
-  </div>
-  <div>
-    <a [routerLink]="['directive-testing']" routerLinkActive="NavMenuActive">
-      <button mat-button>Directive Testing</button>
-    </a>
-  </div>
-  <div>
-      <a [routerLink]="['account-login']" routerLinkActive="NavMenuActive">
-        <button mat-button>Login</button>
-      </a>
+<div fxLayout="row">
+  <div fxLayout="row warp" fxFlex="80%" fxLayoutAlign="flex-start" class="NavMenuColor">
+    <div>
+      <button mat-button routerLink="/" routerLinkActive="NavMenuActive" [routerLinkActiveOptions]="{exact: true}">Home</button>
     </div>
+    <div>
+        <button mat-button routerLink="basic-testing" routerLinkActive="NavMenuActive">Basic Testing</button>
+    </div>
+    <div>
+        <button mat-button [routerLink]="['database-testing']" routerLinkActive="NavMenuActive">Database Testing</button>
+    </div>
+    <div>
+        <button mat-button [routerLink]="['param-testing']" routerLinkActive="NavMenuActive">Param Testing</button>
+    </div>
+    <div>
+        <button mat-button [routerLink]="['component-deepdive']" routerLinkActive="NavMenuActive">Component Deepdrive</button>
+    </div>
+    <div>
+        <button mat-button [routerLink]="['directive-testing']" routerLinkActive="NavMenuActive">Directive Testing</button>
+    </div>
+  </div>
+<div class="NavMenuColor" fxFlex="20%" fxLayoutAlign="flex-end" >
+      <button mat-button [routerLink]="['account-login']" routerLinkActive="NavMenuActive" *ngIf="!hasAnAccountLogined; else UserMenePanelView">Login</button>
+      <ng-template #UserMenePanelView>
+        <app-user-menu-panel></app-user-menu-panel>
+      </ng-template>
 </div>
+</div>
+
 <router-outlet></router-outlet>

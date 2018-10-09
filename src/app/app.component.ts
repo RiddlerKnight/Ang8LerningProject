@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from './services/accounts.service';
+import { AccountModel } from './services/models/account.model';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,21 @@ import { AccountService } from './services/accounts.service';
 export class AppComponent implements OnInit{
   title = 'AngularSimpleProject';
   
-  constructor(private accountServices:AccountService){}
+  constructor(private accountService:AccountService){}
+  hasAnAccountLogined = false;
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.accountServices.AddAccount('godspeed','1234','Gon');
+    this.accountService.AddAccount('godspeed','1234','Gon');
+
+    this.accountService.GetLoginedAccountInfo() != null ? this.hasAnAccountLogined = true: false;
+
+    this.accountService.AccountLoginNotify.subscribe((acc:AccountModel) => {
+      this.hasAnAccountLogined = true;
+    });
+    this.accountService.AccountLogoutNotify.subscribe((acc:AccountModel) => {
+      this.hasAnAccountLogined = false;
+    });
   }
 }
