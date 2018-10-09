@@ -6,7 +6,6 @@ import { AccountModel } from '../services/models/account.model';
   selector: 'app-account-login',
   templateUrl: './account-login.component.html',
   styleUrls: ['./account-login.component.scss'],
-  providers: [AccountService]
 })
 export class AccountLoginComponent implements OnInit {
 
@@ -23,9 +22,10 @@ export class AccountLoginComponent implements OnInit {
     var theAccount = this.accountService.GetLoginTheAccount(this.tbUsernameValue, 
                                                             this.tbPasswordValue);
     if(theAccount != null) {
-      alert('Login Complete');
+      console.log("Login Complete");
+      console.log(theAccount);
     }else{
-      alert('Login fail');
+      console.log('Login fail');
     }
   }
 }
