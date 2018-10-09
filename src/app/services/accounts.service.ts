@@ -1,17 +1,24 @@
 import { AccountModel } from "./models/account.model";
 import { SimpleLogService } from "./simple-log.service";
-import { Injectable } from "@angular/core";
+import { Injectable, EventEmitter, Input } from "@angular/core";
 
 @Injectable()  //This is required when we need to inject another services to this service
 export class AccountService{
     constructor(private logService:SimpleLogService){}
-    account:AccountModel[] = [new AccountModel('admin','tong', 'Administrator'),
+
+    //this property is should be private
+    private account:AccountModel[] = [new AccountModel('admin','tong', 'Administrator'),
                                 new AccountModel('andru','tong', 'Andru Big', 'CEO'),
                                 new AccountModel('morgan','tong', 'Morgan Meson','CFO'),
                                 new AccountModel('itagi','tong', ' Itachi Uchiha','CMO')]
-    loginAs:AccountModel;
+    private loginAs:AccountModel;
 
-    AddAccount(username:string, 
+    @Input() NewAccountAddNotify = new EventEmitter<AccountModel>();
+    @Input() AccountLoginNotify = new EventEmitter<AccountModel>();
+    @Input() AccountLogoutNotify = new EventEmitter<AccountModel>();
+    @Input() AccountStatusUpdateNotify = new EventEmitter<AccountModel>();
+
+    AddAccount(username:string,
         password:string, 
         name:string, 
         department:string = '', 
@@ -33,11 +40,17 @@ export class AccountService{
         
         this.loginAs = checkAcc;
         this.logService.logStatusChange(checkAcc.Name +' is Online');
+        this.AccountLoginNotify.emit(checkAcc);
         return checkAcc;
+    }
+
+    GetLoginedAccountInfo():AccountModel{
+        return this.loginAs;
     }
 
     LogoutTheAccount(){
         this.logService.logStatusChange(this.loginAs.Name +' is offline');
+        this.AccountLogoutNotify.emit(this.loginAs);
         this.loginAs = null;
     }
 }

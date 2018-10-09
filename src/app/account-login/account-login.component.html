@@ -1,6 +1,6 @@
 <div class="pageBg">
 <mat-card fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px">
-  <div fxLayout="column" fxFlex="60%" fxLayoutAlign="center center" *ngIf="accountService.loginAs == null; else loginedProfile">
+  <div fxLayout="column" fxFlex="60%" fxLayoutAlign="center center" *ngIf="loginedAccount == null; else loginedProfile">
     <div>
       <span>Login</span>
     </div>
@@ -16,7 +16,7 @@
       </div>
       <div fxLayout="row" fxLayoutGap="10px">
           <button mat-raised-button (click)="Login()">Login</button>
-          <button mat-raised-button>Clear</button>
+          <button mat-raised-button (click)="ClearTb()">Clear</button>
         </div>
   </div>
   <ng-template #loginedProfile>

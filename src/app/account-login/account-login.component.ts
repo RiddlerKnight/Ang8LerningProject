@@ -11,10 +11,18 @@ export class AccountLoginComponent implements OnInit {
 
   tbUsernameValue:string;
   tbPasswordValue:string;
+  private loginedAccount:AccountModel;
 
   constructor(private accountService:AccountService) { }
 
   ngOnInit() {
+    this.accountService.AccountLoginNotify.subscribe((acc:AccountModel)=>{
+      this.loginedAccount = acc;
+    });
+
+    this.accountService.AccountLogoutNotify.subscribe((acc:AccountModel)=>{
+      this.loginedAccount = null;
+    });
   }
 
   Login()
@@ -24,6 +32,8 @@ export class AccountLoginComponent implements OnInit {
     if(theAccount != null) {
       console.log("Login Complete");
       console.log(theAccount);
+      this.tbUsernameValue = '';
+      this.tbPasswordValue = '';
     }else{
       console.log('Login fail');
     }
@@ -31,5 +41,11 @@ export class AccountLoginComponent implements OnInit {
 
   Logout(){
     this.accountService.LogoutTheAccount();
+  }
+
+  ClearTb()
+  {
+    this.tbUsernameValue = '';
+    this.tbPasswordValue = '';
   }
 }
