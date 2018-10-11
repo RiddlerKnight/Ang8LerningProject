@@ -22,4 +22,9 @@ export class UserMenuPanelComponent implements OnInit {
     });
   }
 
+  Logout()
+  {
+    this.accountService.LogoutTheAccount();
+  }
+
 }

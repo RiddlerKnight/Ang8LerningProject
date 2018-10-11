@@ -11,7 +11,7 @@ export class AccountService{
                                 new AccountModel('andru','tong', 'Andru Big', 'CEO'),
                                 new AccountModel('morgan','tong', 'Morgan Meson','CFO'),
                                 new AccountModel('itagi','tong', ' Itachi Uchiha','CMO')]
-    private loginAs:AccountModel;
+    private loginAs:AccountModel = null;
 
     @Input() NewAccountAddNotify = new EventEmitter<AccountModel>();
     @Input() AccountLoginNotify = new EventEmitter<AccountModel>();

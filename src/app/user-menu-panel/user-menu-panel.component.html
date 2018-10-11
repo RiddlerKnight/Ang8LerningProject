@@ -1,3 +1,3 @@
 <mat-card fxFlex *ngIf="loginedAccount != null">
-  Welcome {{ loginedAccount.Name }}
+  Welcome {{ loginedAccount.Name }} <button mat-button (click)="Logout()">Logout</button>
 </mat-card>

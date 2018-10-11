@@ -1,14 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Routes, RouterModule } from '@angular/router';
 import {MatButtonModule, MatSliderModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonToggleModule} from '@angular/material';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { FormsModule } from '@angular/forms';
+import { AccountService } from './services/accounts.service';
+import { SimpleLogService } from './services/simple-log.service';
+import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { DatabaseTestingComponent } from './database-testing/database-testing.component';
 import { BasicTestingComponent } from './basic-testing/basic-testing.component';
@@ -19,21 +21,11 @@ import { ItemModelComponent } from './component-deepdive/item-model/item-model.c
 import { DirectiveTestingComponent } from './directive-testing/directive-testing.component';
 import { GreenHighlighterDirective } from './directive-testing/green-highlighter.directive';
 import { UnlessDirective } from './directive-testing/unless.directive';
-import { AccountLoginComponent } from './account-login/account-login.component';
-import { AccountService } from './services/accounts.service';
-import { SimpleLogService } from './services/simple-log.service';
+import { AccountLoginComponent } from './account-manager/account-login/account-login.component';
 import { UserMenuPanelComponent } from './user-menu-panel/user-menu-panel.component';
+import { AccountEditComponent } from './account-manager/account-edit/account-edit.component';
+import { AccountOverviewComponent } from './account-manager/account-overview/account-overview.component';
 
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'database-testing', component: DatabaseTestingComponent},
-  {path: 'basic-testing', component: BasicTestingComponent},
-  {path: 'param-testing', component: ShowGetParamComponent},
-  {path: 'param-testing/:id/:name', component: ShowGetParamComponent},
-  {path: 'component-deepdive', component: ComponentDeepdiveComponent},
-  {path: 'directive-testing', component: DirectiveTestingComponent},
-  {path: 'account-login', component:AccountLoginComponent}
-];
 
 @NgModule({
   declarations: [
@@ -49,7 +41,9 @@ const appRoutes: Routes = [
     GreenHighlighterDirective,
     UnlessDirective,
     AccountLoginComponent,
-    UserMenuPanelComponent
+    UserMenuPanelComponent,
+    AccountEditComponent,
+    AccountOverviewComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +57,7 @@ const appRoutes: Routes = [
     MatInputModule,
     FlexLayoutModule,
     MatButtonToggleModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [AccountService,SimpleLogService],
   bootstrap: [AppComponent]
