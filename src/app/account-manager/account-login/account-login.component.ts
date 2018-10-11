@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountModel } from 'src/app/services/models/account.model';
 import { AccountService } from 'src/app/services/accounts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account-login',
@@ -13,7 +14,7 @@ export class AccountLoginComponent implements OnInit {
   tbPasswordValue:string;
   private loginedAccount:AccountModel;
 
-  constructor(private accountService:AccountService) { }
+  constructor(private accountService:AccountService, private router:Router) { }
 
   ngOnInit() {
     this.accountService.AccountLoginNotify.subscribe((acc:AccountModel)=>{
@@ -34,6 +35,7 @@ export class AccountLoginComponent implements OnInit {
       console.log(theAccount);
       this.tbUsernameValue = '';
       this.tbPasswordValue = '';
+      this.router.navigate(['/account-overview']);
     }else{
       console.log('Login fail');
     }

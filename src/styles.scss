@@ -15,6 +15,13 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
     background-color: mat-color($accent-color);
 }
 
+.loginForm{
+    background-color: #222222;
+}
+.pageBg{
+    background-color: #111111;
+    height: 100%;
+}
 //====== This is example for changing theme==========
 // // default theme:
 // $primary: mat-palette($mat-blue,800);
