@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountModel } from 'src/app/services/models/account.model';
+import { AccountService } from 'src/app/services/accounts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account-overview',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountOverviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private accountService:AccountService, private router:Router) { }
+  private loginedAccount:AccountModel;
 
   ngOnInit() {
+    this.accountService.UserLoginObserver.subscribe((acc:AccountModel)=>{
+      this.loginedAccount = acc;
+    });
+
+    let account = this.accountService.GetLoginedAccountInfo();
+    if(account != null)
+    {
+      this.loginedAccount = account;
+    }
   }
 
 }

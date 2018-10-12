@@ -1,7 +1,18 @@
 <div class="pageBg">
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <mat-card fxFlex="80%">
-            account-overview works!
+      <mat-card fxFlex="80%" fxLayout="column">
+        <div>
+            <h3> Hello!! {{ loginedAccount.Name }}</h3>
+          </div>
+          <div fxLayout="column">
+            <h3>Summary</h3>
+            <p>Name: {{ loginedAccount.Name }}</p>
+            <p>Department: {{ loginedAccount.Department }}</p>
+            <p>Ages: {{ loginedAccount.Ages }}</p>
+          </div>
+          <div>
+            <button  mat-raised-button (click)='EditAccount()'>Edit Account</button>
+          </div>
       </mat-card>
     <router-outlet></router-outlet>
   </div>

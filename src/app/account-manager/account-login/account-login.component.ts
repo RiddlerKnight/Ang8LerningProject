@@ -19,7 +19,8 @@ export class AccountLoginComponent implements OnInit {
   ngOnInit() {
     this.accountService.UserLoginObserver.subscribe((acc:AccountModel)=>{
       this.loginedAccount = acc;
-    })
+    });
+    
     // this.accountService.AccountLoginNotify.subscribe((acc:AccountModel)=>{
     //   this.loginedAccount = acc;
     // });
