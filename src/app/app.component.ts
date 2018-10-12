@@ -9,7 +9,7 @@ import { AccountModel } from './services/models/account.model';
 })
 export class AppComponent implements OnInit{
   title = 'AngularSimpleProject';
-  
+
   constructor(private accountService:AccountService){}
   hasAnAccountLogined = false;
 
@@ -18,13 +18,17 @@ export class AppComponent implements OnInit{
     //Add 'implements OnInit' to the class.
     this.accountService.AddAccount('godspeed','1234','Gon');
 
-    this.accountService.GetLoginedAccountInfo() != null ? this.hasAnAccountLogined = true: false;
+    // this.accountService.GetLoginedAccountInfo() != null ? this.hasAnAccountLogined = true: false;
 
-    this.accountService.AccountLoginNotify.subscribe((acc:AccountModel) => {
+    this.accountService.UserLoginObserver.subscribe((acc:AccountModel) => {
+      if(acc === null){
+        this.hasAnAccountLogined = false;
+      }else{
       this.hasAnAccountLogined = true;
+      }
     });
-    this.accountService.AccountLogoutNotify.subscribe((acc:AccountModel) => {
-      this.hasAnAccountLogined = false;
-    });
+    // this.accountService.AccountLogoutNotify.subscribe((acc:AccountModel) => {
+    //   this.hasAnAccountLogined = false;
+    // });
   }
 }

@@ -8,13 +8,13 @@ import { AccountService } from 'src/app/services/accounts.service';
 })
 export class AccountEditComponent implements OnInit {
 
-  private CanEdit:boolean;
+  private CanEdit:boolean = false;
   constructor(private accountService:AccountService) { }
 
   ngOnInit() {
-    this.accountService.GetLoginedAccountInfo() === null ? this.CanEdit = false:this.CanEdit = true;
-    this.accountService.AccountLogoutNotify.subscribe(()=>{this.CanEdit = false;});
-    this.accountService.AccountLoginNotify.subscribe(()=>{this.CanEdit = true;});
+    // this.accountService.GetLoginedAccountInfo() === null ? this.CanEdit = false:this.CanEdit = true;
+    // this.accountService.AccountLogoutNotify.subscribe(()=>{this.CanEdit = false;});
+    // this.accountService.AccountLoginNotify.subscribe(()=>{this.CanEdit = true;});
   }
 
 }

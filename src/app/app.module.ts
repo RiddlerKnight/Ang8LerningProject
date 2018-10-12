@@ -25,6 +25,7 @@ import { AccountLoginComponent } from './account-manager/account-login/account-l
 import { UserMenuPanelComponent } from './user-menu-panel/user-menu-panel.component';
 import { AccountEditComponent } from './account-manager/account-edit/account-edit.component';
 import { AccountOverviewComponent } from './account-manager/account-overview/account-overview.component';
+import { AuhthGuard } from './services/auth-guard.service';
 
 
 @NgModule({
@@ -59,7 +60,7 @@ import { AccountOverviewComponent } from './account-manager/account-overview/acc
     MatButtonToggleModule,
     AppRoutingModule
   ],
-  providers: [AccountService,SimpleLogService],
+  providers: [AccountService, AuhthGuard, SimpleLogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

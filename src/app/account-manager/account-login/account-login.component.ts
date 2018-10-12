@@ -17,28 +17,41 @@ export class AccountLoginComponent implements OnInit {
   constructor(private accountService:AccountService, private router:Router) { }
 
   ngOnInit() {
-    this.accountService.AccountLoginNotify.subscribe((acc:AccountModel)=>{
+    this.accountService.UserLoginObserver.subscribe((acc:AccountModel)=>{
       this.loginedAccount = acc;
-    });
+    })
+    // this.accountService.AccountLoginNotify.subscribe((acc:AccountModel)=>{
+    //   this.loginedAccount = acc;
+    // });
 
-    this.accountService.AccountLogoutNotify.subscribe((acc:AccountModel)=>{
-      this.loginedAccount = null;
-    });
+    // this.accountService.AccountLogoutNotify.subscribe((acc:AccountModel)=>{
+    //   this.loginedAccount = null;
+    // });
   }
 
   Login()
   {
     var theAccount = this.accountService.GetLoginTheAccount(this.tbUsernameValue, 
                                                             this.tbPasswordValue);
-    if(theAccount != null) {
-      console.log("Login Complete");
+
+    if(theAccount){
+        console.log("Login Complete");
       console.log(theAccount);
       this.tbUsernameValue = '';
       this.tbPasswordValue = '';
       this.router.navigate(['/account-overview']);
     }else{
-      console.log('Login fail');
+        console.log('Login fail');
     }
+    // if(theAccount != null) {
+    //   console.log("Login Complete");
+    //   console.log(theAccount);
+    //   this.tbUsernameValue = '';
+    //   this.tbPasswordValue = '';
+    //   this.router.navigate(['/account-overview']);
+    // }else{
+    //   console.log('Login fail');
+    // }
   }
 
   Logout(){

@@ -10,6 +10,7 @@ import { DirectiveTestingComponent } from './directive-testing/directive-testing
 import { AccountLoginComponent } from './account-manager/account-login/account-login.component';
 import { AccountEditComponent } from './account-manager/account-edit/account-edit.component';
 import { AccountOverviewComponent } from './account-manager/account-overview/account-overview.component';
+import { AuhthGuard } from './services/auth-guard.service';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -19,7 +20,7 @@ const appRoutes: Routes = [
     {path: 'param-testing/:id/:name', component: ShowGetParamComponent},
     {path: 'component-deepdive', component: ComponentDeepdiveComponent},
     {path: 'directive-testing', component: DirectiveTestingComponent},
-    {path: 'account-overview', component: AccountOverviewComponent, children:[
+    {path: 'account-overview', canActivate:[AuhthGuard], component: AccountOverviewComponent, children:[
       {path: 'edit', component:AccountEditComponent}
     ]},
     {path: 'account-login', component:AccountLoginComponent}
