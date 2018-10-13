@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AccountModel } from 'src/app/services/models/account.model';
 import { AccountService } from 'src/app/services/accounts.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-account-login',
@@ -63,5 +64,21 @@ export class AccountLoginComponent implements OnInit {
   {
     this.tbUsernameValue = '';
     this.tbPasswordValue = '';
+  }
+
+  OnLogin(form:NgForm)
+  {
+    const value = form.value;
+
+    var theAccount = this.accountService.GetLoginTheAccount(value.username, 
+      value.password);
+
+    if(theAccount){
+      console.log("Login Complete");
+      console.log(theAccount);
+    }
+    else{
+      console.log('Login fail');
+    }
   }
 }

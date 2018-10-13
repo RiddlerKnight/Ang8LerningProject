@@ -1,23 +1,25 @@
 <div class="pageBg">
 <mat-card fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px">
   <div fxLayout="column" fxFlex="60%" fxLayoutAlign="center center" *ngIf="loginedAccount == null; else loginedProfile">
+    <form (ngSubmit)="OnLogin(f)" #f="ngForm">
     <div>
       <span>Login</span>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="User Name" [(ngModel)]="tbUsernameValue">
+        <input matInput placeholder="User Name" name="username" ngModel>
       </mat-form-field>
     </div>
     <div>
         <mat-form-field>
-          <input matInput type="password" placeholder="Password" [(ngModel)]="tbPasswordValue">
+          <input matInput type="password" placeholder="Password" name="password" ngModel>
         </mat-form-field>
       </div>
       <div fxLayout="row" fxLayoutGap="10px">
-          <button mat-raised-button (click)="Login()">Login</button>
-          <button mat-raised-button (click)="ClearTb()">Clear</button>
+          <button mat-raised-button type="submit">Login</button>
+          <button mat-raised-button type="reset">Clear</button>
         </div>
+      </form>
   </div>
   <ng-template #loginedProfile>
     <div fxLayout="column" fxFlex="60%" fxLayoutAlign="center center">
