@@ -11,6 +11,7 @@ import { AccountLoginComponent } from './account-manager/account-login/account-l
 import { AccountEditComponent } from './account-manager/account-edit/account-edit.component';
 import { AccountOverviewComponent } from './account-manager/account-overview/account-overview.component';
 import { AuhthGuard } from './services/auth-guard.service';
+import { AnotherAccountEditComponent } from './account-manager/another-account-edit/another-account-edit.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
     {path: 'component-deepdive', component: ComponentDeepdiveComponent},
     {path: 'directive-testing', component: DirectiveTestingComponent},
     {path: 'account-overview', canActivate:[AuhthGuard], component: AccountOverviewComponent, children:[
-      {path: 'edit', component:AccountEditComponent}
+      {path: 'edit', component:AccountEditComponent},
+        {path:'another-edit', component:AnotherAccountEditComponent}
     ]},
     {path: 'account-login', component:AccountLoginComponent}
   ];

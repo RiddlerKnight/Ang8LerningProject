@@ -26,6 +26,9 @@ import { UserMenuPanelComponent } from './user-menu-panel/user-menu-panel.compon
 import { AccountEditComponent } from './account-manager/account-edit/account-edit.component';
 import { AccountOverviewComponent } from './account-manager/account-overview/account-overview.component';
 import { AuhthGuard } from './services/auth-guard.service';
+import { AnotherAccountEditComponent } from './account-manager/another-account-edit/another-account-edit.component';
+import { AccountListComponent } from './account-manager/another-account-edit/account-list/account-list.component';
+import { AccountListItemComponent } from './account-manager/another-account-edit/account-list/account-list-item/account-list-item.component';
 
 
 @NgModule({
@@ -44,7 +47,10 @@ import { AuhthGuard } from './services/auth-guard.service';
     AccountLoginComponent,
     UserMenuPanelComponent,
     AccountEditComponent,
-    AccountOverviewComponent
+    AccountOverviewComponent,
+    AnotherAccountEditComponent,
+    AccountListComponent,
+    AccountListItemComponent
   ],
   imports: [
     BrowserModule,

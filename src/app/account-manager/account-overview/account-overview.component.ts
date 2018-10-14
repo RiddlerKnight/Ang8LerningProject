@@ -29,4 +29,8 @@ export class AccountOverviewComponent implements OnInit {
     this.router.navigate(["edit"], {relativeTo:this.currentRout});
   }
 
+  EditAnotherAccount(){
+    this.router.navigate(['another-edit'], {relativeTo:this.currentRout})
+  }
+
 }
