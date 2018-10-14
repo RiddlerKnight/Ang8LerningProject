@@ -1,3 +1,22 @@
-<div fxLayout="row" *ngIf="!CanEdit">
-  <div>You need to login</div>
+<div fxLayout="row">
+  <div fxLayout="column">
+    <div>Editting</div>
+    <div>
+      <form (ngSubmit)="OnEditing(f)" #f="ngForm" fxLayout="column">
+        <mat-form-field>
+          <label>Name:</label>
+          <input matInput placeholder="" name="name" required [(ngModel)]="loginedAccount.Name" >
+        </mat-form-field>
+        <mat-form-field>
+            <label>Department:</label>
+          <input matInput placeholder="" name="department" [(ngModel)]="loginedAccount.Department" >
+        </mat-form-field>
+        <mat-form-field>
+            <label>Age:</label>
+          <input matInput placeholder="" name="age" [(ngModel)]="loginedAccount.Ages" >
+        </mat-form-field>
+        <button mat-raised-button type="submit" [disabled]="!f.valid">Confirm</button>
+      </form>
+    </div>
+</div>
 </div>

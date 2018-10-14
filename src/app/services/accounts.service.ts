@@ -63,6 +63,23 @@ export class AccountService implements OnInit{
         return this.loginAs;
     }
 
+    UpdateAccountInfo(username:string, name:string, department:string, age:number):boolean{
+        let checkAcc:AccountModel =this.account.filter(acc=>
+            acc.UserName === username)[0]
+        var index = this.account.indexOf(checkAcc);
+        if(checkAcc !== undefined)
+        {
+            this.account[index].Name = name;
+            this.account[index].Department = department;
+            this.account[index].Ages = age;
+            console.log(this.account[index]);
+            this.loginAs = checkAcc;
+            this.UserLoginObserver.next(this.loginAs);
+            
+            return true;
+        }else return false;
+    }
+
     LogoutTheAccount(){
         this.logService.logStatusChange(this.loginAs.Name +' is offline');
         //this.AccountLogoutNotify.emit(this.loginAs);

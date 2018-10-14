@@ -76,6 +76,7 @@ export class AccountLoginComponent implements OnInit {
     if(theAccount){
       console.log("Login Complete");
       console.log(theAccount);
+      this.router.navigate(['/account-overview']);
     }
     else{
       console.log('Login fail');

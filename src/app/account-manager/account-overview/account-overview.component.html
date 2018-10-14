@@ -1,10 +1,11 @@
 <div class="pageBg">
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <mat-card fxFlex="80%" fxLayout="column">
+      <mat-card fxFlex="80%" fxLayout="column" >
+        <div *ngIf="router.url === '/account-overview'">
         <div>
             <h3> Hello!! {{ loginedAccount.Name }}</h3>
           </div>
-          <div fxLayout="column">
+          <div fxLayout="column" fxLayoutGap="6px">
             <h3>Summary</h3>
             <p>Name: {{ loginedAccount.Name }}</p>
             <p>Department: {{ loginedAccount.Department }}</p>
@@ -13,7 +14,8 @@
           <div>
             <button  mat-raised-button (click)='EditAccount()'>Edit Account</button>
           </div>
+        </div>
+        <router-outlet></router-outlet>
       </mat-card>
-    <router-outlet></router-outlet>
   </div>
 </div>

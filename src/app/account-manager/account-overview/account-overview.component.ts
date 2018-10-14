@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountModel } from 'src/app/services/models/account.model';
 import { AccountService } from 'src/app/services/accounts.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-account-overview',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AccountOverviewComponent implements OnInit {
 
-  constructor(private accountService:AccountService, private router:Router) { }
+  constructor(private accountService:AccountService, private router:Router, private currentRout:ActivatedRoute) { }
   private loginedAccount:AccountModel;
 
   ngOnInit() {
@@ -23,6 +23,10 @@ export class AccountOverviewComponent implements OnInit {
     {
       this.loginedAccount = account;
     }
+  }
+
+  EditAccount(){
+    this.router.navigate(["edit"], {relativeTo:this.currentRout});
   }
 
 }
