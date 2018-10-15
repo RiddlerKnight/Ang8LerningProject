@@ -59,6 +59,10 @@ export class AccountService implements OnInit{
         }
     }
 
+    GetAllAccounts():AccountModel[]{
+        return this.account;
+    }
+
     GetLoginedAccountInfo():AccountModel{
         return this.loginAs;
     }

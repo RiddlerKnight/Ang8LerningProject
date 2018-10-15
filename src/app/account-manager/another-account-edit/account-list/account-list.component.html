@@ -1,3 +1,6 @@
-<p>
-  account-list works!
-</p>
+<div fxLayout="column" fxFlex="100%" fxLayoutGap="5px">
+    <mat-list>
+    <app-account-list-item
+      *ngFor="let account of accountList" [accountItem]="account"></app-account-list-item>
+    </mat-list>
+</div>

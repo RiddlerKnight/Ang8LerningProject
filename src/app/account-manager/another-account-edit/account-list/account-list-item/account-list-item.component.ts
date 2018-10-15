@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AccountModel } from 'src/app/services/models/account.model';
 
 @Component({
   selector: 'app-account-list-item',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountListItemComponent implements OnInit {
 
+  @Input() accountItem:AccountModel;
   constructor() { }
 
   ngOnInit() {

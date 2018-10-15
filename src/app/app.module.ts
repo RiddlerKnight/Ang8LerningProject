@@ -3,7 +3,7 @@ import { NgModule, Component } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatSliderModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonToggleModule} from '@angular/material';
+import {MatButtonModule, MatSliderModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonToggleModule, MatListModule} from '@angular/material';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -64,7 +64,8 @@ import { AccountListItemComponent } from './account-manager/another-account-edit
     MatInputModule,
     FlexLayoutModule,
     MatButtonToggleModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatListModule
   ],
   providers: [AccountService, AuhthGuard, SimpleLogService],
   bootstrap: [AppComponent]

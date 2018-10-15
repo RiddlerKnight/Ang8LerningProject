@@ -23,9 +23,10 @@ const appRoutes: Routes = [
     {path: 'directive-testing', component: DirectiveTestingComponent},
     {path: 'account-overview', canActivate:[AuhthGuard], component: AccountOverviewComponent, children:[
       {path: 'edit', component:AccountEditComponent},
-        {path:'another-edit', component:AnotherAccountEditComponent}
+        
     ]},
-    {path: 'account-login', component:AccountLoginComponent}
+    {path: 'account-login', component:AccountLoginComponent},
+    {path:'another-edit', component:AnotherAccountEditComponent}
   ];
   
 @NgModule({
