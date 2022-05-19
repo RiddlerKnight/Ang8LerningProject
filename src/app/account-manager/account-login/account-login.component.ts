@@ -13,7 +13,7 @@ export class AccountLoginComponent implements OnInit {
 
   tbUsernameValue:string;
   tbPasswordValue:string;
-  private loginedAccount:AccountModel;
+  public loginedAccount:AccountModel;
 
   constructor(private accountService:AccountService, private router:Router) { }
 
@@ -21,7 +21,7 @@ export class AccountLoginComponent implements OnInit {
     this.accountService.UserLoginObserver.subscribe((acc:AccountModel)=>{
       this.loginedAccount = acc;
     });
-    
+
     // this.accountService.AccountLoginNotify.subscribe((acc:AccountModel)=>{
     //   this.loginedAccount = acc;
     // });
@@ -33,7 +33,7 @@ export class AccountLoginComponent implements OnInit {
 
   Login()
   {
-    var theAccount = this.accountService.GetLoginTheAccount(this.tbUsernameValue, 
+    var theAccount = this.accountService.GetLoginTheAccount(this.tbUsernameValue,
                                                             this.tbPasswordValue);
 
     if(theAccount){
@@ -70,7 +70,7 @@ export class AccountLoginComponent implements OnInit {
   {
     const value = form.value;
 
-    var theAccount = this.accountService.GetLoginTheAccount(value.username, 
+    var theAccount = this.accountService.GetLoginTheAccount(value.username,
       value.password);
 
     if(theAccount){

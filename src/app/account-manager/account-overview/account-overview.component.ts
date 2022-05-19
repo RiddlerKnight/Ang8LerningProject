@@ -10,8 +10,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class AccountOverviewComponent implements OnInit {
 
-  constructor(private accountService:AccountService, private router:Router, private currentRout:ActivatedRoute) { }
-  private loginedAccount:AccountModel;
+  constructor(private accountService:AccountService, public router:Router, private currentRout:ActivatedRoute) { }
+  public loginedAccount:AccountModel;
 
   ngOnInit() {
     this.accountService.UserLoginObserver.subscribe((acc:AccountModel)=>{

@@ -11,7 +11,7 @@ export class AddItemControlComponent implements OnInit {
   @Output() AddProductCommand:EventEmitter<ProductItemModel> = new EventEmitter<ProductItemModel>();
 
   //this approach show how to access input element by ViewChild
-  @ViewChild('commentMessage') CommentInputElement:ElementRef;
+  @ViewChild('commentMessage', { static: false}) CommentInputElement:ElementRef;
 
   productName = "";
   productDetail ="";

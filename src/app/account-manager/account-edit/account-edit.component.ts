@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class AccountEditComponent implements OnInit {
 
   constructor(private accountService:AccountService, private router:Router) { }
-  private loginedAccount:AccountModel = null;
+  public loginedAccount:AccountModel = null;
 
   //@ViewChild('f') editForm:NgForm;
   ngOnInit() {
@@ -28,7 +28,7 @@ export class AccountEditComponent implements OnInit {
     let account = this.accountService.GetLoginedAccountInfo();
     if(account != null)
     {
-      // When object has passed to a variable, the variable is the object instance which means when you edit the value inside, 
+      // When object has passed to a variable, the variable is the object instance which means when you edit the value inside,
       // the values inside will change across the project.
       this.loginedAccount = new AccountModel(account.UserName, account.Password, account.Name, account.Department, account.Ages);
     }
