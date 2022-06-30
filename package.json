@@ -11,6 +11,12 @@
     "semantic-release": "semantic-release"
   },
   "private": true,
+  "publishConfig": {
+    "access": "private"
+  },
+  "files": [
+    "*"
+  ],
   "dependencies": {
     "@angular/animations": "^8.1",
     "@angular/cdk": "^8.2",
